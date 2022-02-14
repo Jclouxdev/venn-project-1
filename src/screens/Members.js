@@ -1,7 +1,8 @@
-import { View, ScrollView, Button, StyleSheet } from "react-native";
+import { View, ScrollView, Button, StyleSheet, Text } from "react-native";
 
 import Avatar from "../components/Avatar";
 import data from "../../assets/data.json";
+import { TouchableOpacity } from "react-native";
 
 function Members() {
   return (
@@ -22,7 +23,9 @@ function Members() {
         ))}
       </ScrollView>
       <View style={styles.footer}>
-        <Button title="Inviter" color="black" />
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.label}>Inviter</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -42,5 +45,17 @@ const styles = StyleSheet.create({
   footer: {
     backgroundColor: "white",
     padding: 32,
+  },
+  button: {
+    borderColor: "black",
+    borderWidth: 4,
+    borderStyle: "solid",
+    backgroundColor: "rgba(0, 0, 0, 0.1)",
+    padding: 8,
+  },
+  label: {
+    textAlign: "center",
+    fontSize: 20,
+    fontWeight: "700",
   },
 });
